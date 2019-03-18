@@ -1,0 +1,8 @@
+version: '2'
+services:
+    open-voting:
+        container_name: open-voting
+        restart: always
+        build: app
+        ports:
+            - "3000:3000"

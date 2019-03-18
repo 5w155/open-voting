@@ -1,0 +1,30 @@
+{
+    "name": "open-voting",
+    "version": "1.0.0",
+    "author": "Pablo Pfister <pp@5w155.ch>",
+    "license": "MIT",
+    "scripts": {
+        "start": "node ./src/bin/www",
+        "initDB": "node ./src/scripts/initDB.js",
+        "export": "node ./src/scripts/exportResponses.js",
+        "sendEmailTeam": "node ./src/scripts/sendEmailTeam.js",
+        "resultsStats": "node ./src/scripts/resultsStats.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cookie-parser": "^1.4.4",
+        "cookies": "^0.7.3",
+        "csv-file-creator": "^1.0.8",
+        "debug": "~2.6.9",
+        "email-validator": "^1.2.3",
+        "express": "^4.16.4",
+        "helmet": "^3.16.0",
+        "jade": "~1.11.0",
+        "lowdb": "^1.0.0",
+        "morgan": "^1.9.1",
+        "randomstring": "^1.1.5",
+        "sendmail": "^1.4.1",
+        "serve-favicon": "~2.4.5",
+        "set-cookie": "0.0.4"
+    }
+}

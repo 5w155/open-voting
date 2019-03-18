@@ -1,0 +1,72 @@
+extends ../base
+
+block content
+
+    h3 Résultats pour les prix du jury (#{nbParticipants} ont participé au vote)
+
+    canvas(id='publicVotesChart')
+
+    script(type='text/javascript').
+
+        var color = Chart.helpers.color;
+        var horizontalBarChartData = {
+            labels: [#{titles}],
+            datasets: [{
+                label: 'Qualité du pitch',
+                backgroundColor: color('rgb(96, 85, 166)').alpha(1).rgbString(),
+                borderWidth: 0,
+                data: [
+                    #{grades1}
+                ]
+            },{
+                label: 'Caractère innovateur, original et créatif',
+                backgroundColor: color('rgb(183, 85, 78)').alpha(1).rgbString(),
+                borderWidth: 0,
+                data: [
+                    #{grades2}
+                ]
+            },{
+                label: 'Impact/bénéfice potentiel',
+                backgroundColor: color('rgb(206, 134, 80)').alpha(1).rgbString(),
+                borderWidth: 0,
+                data: [
+                    #{grades3}
+                ]
+            },{
+                label: 'Applicabilité de la solution',
+                backgroundColor: color('rgb(255, 200, 0)').alpha(1).rgbString(),
+                borderWidth: 0,
+                data: [
+                    #{grades4}
+                ]
+            }]
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById('publicVotesChart').getContext('2d');
+            window.myHorizontalBar = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: horizontalBarChartData,
+                options: {
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2,
+                        }
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{ stacked: true }],
+                        yAxes: [{ stacked: true }]
+                    },
+                    legend: {
+                        display: false,
+                        position: 'right'
+                    },
+                    title: {
+                        display: true,
+                        text: ''
+                    }
+                }
+            });
+
+        };

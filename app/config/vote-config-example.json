@@ -1,0 +1,112 @@
+{
+    "adminToken": "asi343fna23asubf",
+    "dbName": "example",
+    "questionsPublic": [
+        {
+            "title": "1. Qualité du pitch",
+            "answers": [
+                {"title": "Poussif", "value": 1},
+                {"title": "Hésitant", "value": 2},
+                {"title": "Convaincant", "value": 3},
+                {"title": "Vendu, j'achète!", "value": 4}
+            ],
+            "color": "#800080",
+            "allowAbstention": true
+        },
+        {
+            "title": "2. Caractère innovateur, original et créatif",
+            "answers": [
+                {"title": "Banal", "value": 1},
+                {"title": "Déjà vu", "value": 2},
+                {"title": "Innovant", "value": 3},
+                {"title": "Décoiffant!", "value": 4}
+            ],
+            "color": "#2E8B57",
+            "allowAbstention": true
+        },
+        {
+            "title": "3. Investissement de l'équipe",
+            "answers": [
+                {"title": "Jamais vu : il y avait une équipe ?", "value": 1},
+                {"title": "Un seul travail et les autres ?", "value": 2},
+                {"title": "Bonne ambiance, bonne collaboration", "value": 3},
+                {"title": "Leur a-t-on expliqué qu'on pouvait quitter la salle ?", "value": 4}
+            ],
+            "color": "#B22222",
+            "allowAbstention": true
+        },
+        {
+            "title": "4. Accomplissement durant le hackathon",
+            "answers": [
+                {"title": "Rien developpé (la solution étais dans le chapeau)", "value": 1},
+                {"title": "Ils se sont donnés de la peine", "value": 2},
+                {"title": "Bleuffant", "value": 3},
+                {"title": "Ils ont déplacé une montagne", "value": 4}
+            ],
+            "color": "#00008B",
+            "allowAbstention": true
+        }
+    ],
+
+    "questionsJury": [
+        {
+            "title": "1. Qualité du pitch",
+            "answers": [
+                {"title": "Poussif", "value": 1},
+                {"title": "Hésitant", "value": 2},
+                {"title": "Convaincant", "value": 3},
+                {"title": "Vendu, j'achète!", "value": 4}
+            ],
+            "color": "#800080",
+            "allowAbstention": true
+        },
+        {
+            "title": "2. Caractère innovateur, original et créatif",
+            "answers": [
+                {"title": "Banal", "value": 1},
+                {"title": "Déjà vu", "value": 2},
+                {"title": "Innovant", "value": 3},
+                {"title": "Décoiffant!", "value": 4}
+            ],
+            "color": "#2E8B57",
+            "allowAbstention": true
+        },
+        {
+            "title": "3. Impact/bénéfice potentiel (patients, RH, institution, collaborateurs, économique, social, etc.)",
+            "answers": [
+                {"title": "Ça servira à quoi ?", "value": 1},
+                {"title": "Un petit plus", "value": 2},
+                {"title": "Fera la différence", "value": 3},
+                {"title": "Une vraie révolution !", "value": 4}
+            ],
+            "color": "#B22222",
+            "allowAbstention": true
+        },
+        {
+            "title": "4. Applicabilité de la solution",
+            "answers": [
+                {"title": "Inutilisable", "value": 1},
+                {"title": "Encore du travail", "value": 2},
+                {"title": "Quelque finitions", "value": 3},
+                {"title": "Utilisable tel quel", "value": 4}
+            ],
+            "color": "#00008B",
+            "allowAbstention": true
+        }
+    ],
+
+    "challenges": [
+        {"id": "D01", "name": "MyRehab@Home"},
+        {"id": "D02", "name": "Des jeux pour souffler"},
+        {"id": "D03", "name": "Realtime plastic brain"},
+        {"id": "D04", "name": "Check-list"},
+        {"id": "D05", "name": "e-proche aidant"},
+        {"id": "D06", "name": "h4ck 74 b0173 4 1d335"},
+        {"id": "D07", "name": "MED-Bot"},
+        {"id": "D09", "name": "HUG@home"},
+        {"id": "D10", "name": "Le petit Poucet"},
+        {"id": "D11", "name": "Cancer Fighting"},
+        {"id": "D14", "name": "Smart consent"},
+        {"id": "D15", "name": "Pablo"}
+    ]
+}

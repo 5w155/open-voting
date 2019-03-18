@@ -1,0 +1,52 @@
+extends ../base
+
+block content
+
+    .container
+
+        if(error)
+            .alert.alert-danger
+                a(href='#', data-dismiss='alert', aria-label='close').close &times;
+                p #{error}
+
+        h3(style='color:#888;') Votez le défi &nbsp;
+            span(style='color:red;') ##{id}
+        h3 #{name}
+
+        br
+
+        form(role='form', action="/jury/defi/#{id}", method="post")
+
+            .form-group
+                for q, i in questions
+                    h3 #{q.title}
+
+                    .input-group(style='margin-bottom:10px;')
+                        span.input-group-addon Votre avis :
+                        select.selectpicker(name='g#{i + 1}', data-width='fit', data-show-subtext='true')
+                            option(data-subtext='n/a', value='-', selected) Abstention
+
+                            for a in q.answers
+                                option(data-subtext='#{a.value}pt', value='#{a.value}') #{a.title}
+
+
+                button.btn.btn-success(type='submit', style='padding-right:20px; padding-left:20px; margin-top:20px;') Sauver
+
+    script(type='text/javascript').
+
+        const grades = !{JSON.stringify(grades)}
+
+        $(document).ready(function() {
+            for (var i = 0; i < grades.length; i++) {
+                setSelected('g' + (i + 1), grades[i])
+            }
+        })
+
+        function setSelected(name, grade) {
+            if (grade == '-' || grade == '') {
+                return
+            }
+
+            $('select[name=' + name + ']').val(grade);
+            $('.selectpicker').selectpicker('refresh')
+        }

@@ -1,0 +1,85 @@
+extends ../base
+
+block content
+
+    .container
+
+        if(error)
+            .alert.alert-danger
+                a(href='#', data-dismiss='alert', aria-label='close').close &times;
+                p #{error}
+
+        h2 Admin console
+            a(href="/admin/logout", style="float:right;").btn.btn-default Logout
+
+        .well.well-lg.admin
+            h3.mt-0 Manage accessibility of votes
+                a(href="#", data-toggle="tooltip", data-placement="right", title="Open and close votes")
+                    i.fas.fa-info-circle.ml-10
+
+            ul.list-group.mb-0
+                a(href="#").list-group-item Public vote
+                    span.open-close-vote
+                        form(role='form', action="/admin/toggleVote/public", method="post")
+                            if (publicVote == "Open")
+                                button.btn.btn-success.btn-xs(type='submit') #{publicVote}
+                            else
+                                button.btn.btn-danger.btn-xs(type='submit') #{publicVote}
+
+                a(href="#").list-group-item Jury vote
+                    span.open-close-vote
+                        form(role='form', action="/admin/toggleVote/jury", method="post")
+                            if (juryVote == "Open")
+                                button.btn.btn-success.btn-xs(type='submit') #{juryVote}
+                            else
+                                button.btn.btn-danger.btn-xs(type='submit') #{juryVote}
+
+
+        .well.well-lg.admin
+            h3.mt-0 Jury tokens
+                a(href="#", data-toggle="tooltip", data-placement="right", title="Tokens allow jury members to vote. Create one for each jury member.")
+                    i.fas.fa-info-circle.ml-10
+
+                a(href="/admin/newJuryToken", style="float:right;").btn.btn-default New jury token
+
+
+            ul.list-group.mb-0
+                for tkn in juryTokens
+                    a(href="#").list-group-item.jury-token #{tkn}
+
+        .alert.alert-success.alert-cp-clipboard(style="position:fixed; top:20px; right: 20px;")
+            strong The token has been copied in your clipboard
+
+
+        .well.well-lg.admin
+            h3.mt-0 Results
+            a(href="/admin/results/public", target="_blank") Public votes
+            br
+            a(href="/admin/results/jury", target="_blank") Jury votes
+
+
+
+
+    script(type='text/javascript').
+        $('.alert-cp-clipboard').hide()
+
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+
+        $('.jury-token').click(function() {
+            // Copy token to clipboard
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(this).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+
+            // Display alert
+            $('.alert-cp-clipboard').fadeIn()
+
+            // Remove alert after x sec
+            setTimeout(function() {
+                $('.alert-cp-clipboard').fadeOut()
+            }, 3000)
+        })

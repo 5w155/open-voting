@@ -1,0 +1,18 @@
+extends ../base
+
+block content
+
+    .container
+
+        if(error)
+            .alert.alert-danger
+                a(href='#', data-dismiss='alert', aria-label='close').close &times;
+                p #{error}
+
+        h3 Votez les défis gagnants
+        p Donnez votre avis sur les défis presentées...
+
+        form(role='form', action="/login", method="post")
+            .form-group
+                input.form-control(type='text', name="email", placeholder='Entrez votre email')
+            button.btn.btn-success(type='submit') Commencer

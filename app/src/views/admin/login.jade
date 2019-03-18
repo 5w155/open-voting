@@ -1,0 +1,17 @@
+extends ../base
+
+block content
+
+    .container
+
+        if(error)
+            .alert.alert-danger
+                a(href='#', data-dismiss='alert', aria-label='close').close &times;
+                p #{error}
+
+        h3 Admin login
+
+        form(role='form', action="/admin/login", method="post")
+            .form-group
+                input.form-control(type='password', name="token", placeholder='Entrez le token administrateur')
+            button.btn.btn-success(type='submit') Login

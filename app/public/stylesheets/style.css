@@ -1,0 +1,95 @@
+:root {
+    --footer-height: 50px;
+}
+
+body {
+    margin: 0px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.header {
+    height: 50px;
+}
+
+.header h3 {
+    float: left;
+    line-height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.header img {
+    height: 100%;
+    float: right;
+}
+
+hr {
+    margin: 10px 0px;
+    margin-bottom: 40px;
+}
+
+.footer {
+    height: var(--footer-height);
+    margin: 40px 0px 10px 0px;
+}
+
+.footer hr {
+    margin: 0px 0px 10px 0px;
+}
+
+.footer p {
+    float: right;
+    height: calc(var(--footer-height) - 11px);
+    line-height: calc(var(--footer-height) - 11px);
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer img {
+    height: calc(var(--footer-height) - 11px);
+    float: right;
+}
+
+.footer a, a:hover, a:visited, a:disabled {
+    color: #333;
+}
+
+.vote-button {
+    font-size: 34px;
+    height: auto;
+    display: block;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.vote-button-p {
+    text-align: center;
+}
+
+.defi-id {
+    float: right;
+    font-size: 24px;
+    color: #A61F13;
+}
+
+.col-sm-3:hover {
+    background: #f6f6f6;
+    border-radius: 6px;
+}
+
+.open-close-vote {
+    float: right;
+}
+
+i.fas {
+    color: #333;
+    cursor: pointer;
+}
+
+i.fas:hover {
+    color: black;
+}

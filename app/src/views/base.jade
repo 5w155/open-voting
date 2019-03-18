@@ -1,0 +1,37 @@
+doctype
+html(lang='fr-FR')
+    head
+        title= 'Hackathon HUG#3'
+
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+        link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', media='screen')
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css', rel='stylesheet', media='screen')
+        link(href='/stylesheets/style.css', rel='stylesheet', media='screen')
+        link(href='/stylesheets/margin_padding_helper.css', rel='stylesheet', media='screen')
+
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.6.3/css/all.css", integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/", crossorigin="anonymous")
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js')
+
+        if (graph)
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js')
+
+    body
+        .container
+            .header
+                h3 Hackathon HUG#3
+                img(src='/images/hug-logo.png')
+            hr
+
+        block content
+
+        .container
+            .footer
+                hr
+                a(href='https://5w155.ch/i.php?i=open-geneva-voting-app', target='_blank')
+                    img(src='/images/5w155-logo.svg')
+                    p powered by

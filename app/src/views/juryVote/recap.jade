@@ -1,0 +1,30 @@
+extends ../base
+
+block content
+
+    .container
+
+        if(error)
+            .alert.alert-danger
+                a(href='#', data-dismiss='alert', aria-label='close').close &times;
+                p #{error}
+
+        h3 Quels défis doivent gagner les prix du jury ?
+        p Cliquez sur un défi pour l'évaluer...
+
+        .badges-legend
+            for q in questions
+                span(style='margin-right:5px; background:#{q.color};').badge x
+                span : votre note pour "#{q.title}"
+                br
+
+        br
+
+        .list-group
+            each val in challenges
+                a(href='/jury/defi/#{val.id}').list-group-item
+                    span(style='color:red;') #{val.id}
+                    span(style='margin-left:8px;') #{val.name}
+                    if (val.replied)
+                        each _, i in Array(val.grades.length)
+                            span(style='float:right; margin-left:5px; background:#{questions[val.grades.length - i - 1].color};').badge #{val.grades[val.grades.length - i - 1]}
