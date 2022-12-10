@@ -17,7 +17,7 @@
         "csv-file-creator": "^1.0.9",
         "debug": "~2.6.9",
         "email-validator": "^1.2.3",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "helmet": "^3.22.0",
         "lowdb": "^1.0.0",
         "morgan": "^1.9.1",
